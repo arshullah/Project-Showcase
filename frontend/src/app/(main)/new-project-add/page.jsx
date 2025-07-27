@@ -208,6 +208,7 @@ const ProjectForm = ({ onSubmit }) => {
         <p className="opacity-80">Showcase your work and inspire others!</p>
       </div>
       <form onSubmit={handleSubmit} className="bg-white rounded-b-xl shadow-xl p-8 space-y-6 border-t-4 border-blue-500">
+        {/* ...existing code... */}
         <div>
           <label className="block font-semibold mb-1">Project Title</label>
           <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition" required maxLength={150} />
@@ -220,6 +221,19 @@ const ProjectForm = ({ onSubmit }) => {
           <label className="block font-semibold mb-1">Abstract</label>
           <textarea name="abstract" value={formData.abstract} onChange={handleChange} placeholder="Abstract" className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition" maxLength={300} />
         </div>
+        {/* Source Code URL field */}
+        <div>
+          <label className="block font-semibold mb-1">Source Code URL</label>
+          <input
+            name="sourceCodeUrl"
+            value={formData.sourceCodeUrl}
+            onChange={handleChange}
+            placeholder="e.g. https://github.com/username/repo"
+            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition"
+            type="url"
+          />
+        </div>
+        {/* ...existing code... */}
         <div>
           <label className="block font-semibold mb-1">Contributors (User)</label>
           {formData.contributors.map((val, i) => (
@@ -252,6 +266,7 @@ const ProjectForm = ({ onSubmit }) => {
           ))}
           <button type="button" onClick={addContributorField} className="text-blue-600 mt-2 font-medium hover:underline">+ Add Contributor</button>
         </div>
+        {/* ...existing code... */}
         <div>
           <label className="block font-semibold mb-1">Technologies Used</label>
           {formData.technologiesUsed.map((val, i) => (
